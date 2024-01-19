@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level Class &mdash; VANTAGE 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Game Class" href="game.html" />
+    <link rel="prev" title="TunnelInside Class" href="tunnel_inside.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            VANTAGE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_proposal.html">Project Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html">VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sds.html">SDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level_generator.html">LevelGenerator Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melbourne.html">Melbourne Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goldcoast.html">GoldCoast Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting.html">GameSetting Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Background Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Util Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldobject.html">WorldObject Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="competitor.html">Competitor Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countdown.html">CountDown Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credit.html">Credit Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="highscore.html">HighScore Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="player_status.html">PlayerStatus Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="player.html">Player Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="player_select.html">PlayerSelect Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segment.html">Segment Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprite.html">Sprite Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="title_screen.html">TitleScreen Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tunnel_entrance.html">TunnelEntrance Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tunnel_inside.html">TunnelInside Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Level Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Level"><code class="docutils literal notranslate"><span class="pre">Level</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Level.name"><code class="docutils literal notranslate"><span class="pre">Level.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.slug"><code class="docutils literal notranslate"><span class="pre">Level.slug</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.song"><code class="docutils literal notranslate"><span class="pre">Level.song</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.laps"><code class="docutils literal notranslate"><span class="pre">Level.laps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.backgrounds"><code class="docutils literal notranslate"><span class="pre">Level.backgrounds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.palettes"><code class="docutils literal notranslate"><span class="pre">Level.palettes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.finished"><code class="docutils literal notranslate"><span class="pre">Level.finished</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.segments"><code class="docutils literal notranslate"><span class="pre">Level.segments</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.competitors"><code class="docutils literal notranslate"><span class="pre">Level.competitors</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.__init__"><code class="docutils literal notranslate"><span class="pre">Level.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.build"><code class="docutils literal notranslate"><span class="pre">Level.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.add_segment"><code class="docutils literal notranslate"><span class="pre">Level.add_segment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.add_sprite"><code class="docutils literal notranslate"><span class="pre">Level.add_sprite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.add_polygon"><code class="docutils literal notranslate"><span class="pre">Level.add_polygon()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.insert_bonuses"><code class="docutils literal notranslate"><span class="pre">Level.insert_bonuses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.add_speed_boost"><code class="docutils literal notranslate"><span class="pre">Level.add_speed_boost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.add_competitor"><code class="docutils literal notranslate"><span class="pre">Level.add_competitor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.add_tunnel"><code class="docutils literal notranslate"><span class="pre">Level.add_tunnel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.track_length"><code class="docutils literal notranslate"><span class="pre">Level.track_length()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.find_segment"><code class="docutils literal notranslate"><span class="pre">Level.find_segment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Level.offset_segment"><code class="docutils literal notranslate"><span class="pre">Level.offset_segment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Game Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game_launcher.html">GameLauncher Class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VANTAGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Level Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/level.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="level-class">
+<h1>Level Class<a class="headerlink" href="#level-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Level">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Level</span></span><a class="headerlink" href="#Level" title="Link to this definition"></a></dt>
+<dd><p>A class representing a game level.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Level.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.slug">
+<span class="sig-name descname"><span class="pre">slug</span></span><a class="headerlink" href="#Level.slug" title="Link to this definition"></a></dt>
+<dd><p>The unique identifier (slug) of the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.song">
+<span class="sig-name descname"><span class="pre">song</span></span><a class="headerlink" href="#Level.song" title="Link to this definition"></a></dt>
+<dd><p>The background music for the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.laps">
+<span class="sig-name descname"><span class="pre">laps</span></span><a class="headerlink" href="#Level.laps" title="Link to this definition"></a></dt>
+<dd><p>The number of laps in the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.backgrounds">
+<span class="sig-name descname"><span class="pre">backgrounds</span></span><a class="headerlink" href="#Level.backgrounds" title="Link to this definition"></a></dt>
+<dd><p>List of background images for the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.palettes">
+<span class="sig-name descname"><span class="pre">palettes</span></span><a class="headerlink" href="#Level.palettes" title="Link to this definition"></a></dt>
+<dd><p>The color palettes for the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.finished">
+<span class="sig-name descname"><span class="pre">finished</span></span><a class="headerlink" href="#Level.finished" title="Link to this definition"></a></dt>
+<dd><p>A boolean indicating whether the level is finished.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.segments">
+<span class="sig-name descname"><span class="pre">segments</span></span><a class="headerlink" href="#Level.segments" title="Link to this definition"></a></dt>
+<dd><p>List of game segments in the level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Level.competitors">
+<span class="sig-name descname"><span class="pre">competitors</span></span><a class="headerlink" href="#Level.competitors" title="Link to this definition"></a></dt>
+<dd><p>List of competitor objects in the level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">details</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a Level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>details</strong> – Details about the level.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Level.build" title="Link to this definition"></a></dt>
+<dd><p>Builds the level by reading track and sprite information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.add_segment">
+<span class="sig-name descname"><span class="pre">add_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.add_segment" title="Link to this definition"></a></dt>
+<dd><p>Adds a game segment to the level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>curve</strong> – The curvature of the segment.</p></li>
+<li><p><strong>start_y</strong> – The starting y-coordinate of the segment.</p></li>
+<li><p><strong>end_y</strong> – The ending y-coordinate of the segment.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.add_sprite">
+<span class="sig-name descname"><span class="pre">add_sprite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.add_sprite" title="Link to this definition"></a></dt>
+<dd><p>Adds a sprite to a specific game segment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segment</strong> – The game segment to which the sprite is added.</p></li>
+<li><p><strong>name</strong> – The name of the sprite.</p></li>
+<li><p><strong>x</strong> – The x-coordinate of the sprite.</p></li>
+<li><p><strong>y</strong> – The y-coordinate of the sprite.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.add_polygon">
+<span class="sig-name descname"><span class="pre">add_polygon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">klass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pre'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.add_polygon" title="Link to this definition"></a></dt>
+<dd><p>Adds a polygon to a game segment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segment</strong> – The game segment to which the polygon is added.</p></li>
+<li><p><strong>klass</strong> – The class of the polygon.</p></li>
+<li><p><strong>when</strong> – The timing of the polygon (either “pre” or “post”).</p></li>
+<li><p><strong>args</strong> – Additional arguments for the polygon.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.insert_bonuses">
+<span class="sig-name descname"><span class="pre">insert_bonuses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Level.insert_bonuses" title="Link to this definition"></a></dt>
+<dd><p>Inserts bonus sprites into random segments of the level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.add_speed_boost">
+<span class="sig-name descname"><span class="pre">add_speed_boost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.add_speed_boost" title="Link to this definition"></a></dt>
+<dd><p>Adds speed boost sprites to the level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – The position of the speed boost.</p></li>
+<li><p><strong>offset</strong> – The offset of the speed boost.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.add_competitor">
+<span class="sig-name descname"><span class="pre">add_competitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.add_competitor" title="Link to this definition"></a></dt>
+<dd><p>Adds a competitor to the level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – The position of the competitor.</p></li>
+<li><p><strong>offset</strong> – The offset of the competitor.</p></li>
+<li><p><strong>name</strong> – The name of the competitor.</p></li>
+<li><p><strong>speed</strong> – The speed of the competitor.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.add_tunnel">
+<span class="sig-name descname"><span class="pre">add_tunnel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.add_tunnel" title="Link to this definition"></a></dt>
+<dd><p>Adds a tunnel to the level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – The starting index of the tunnel.</p></li>
+<li><p><strong>end</strong> – The ending index of the tunnel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.track_length">
+<span class="sig-name descname"><span class="pre">track_length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Level.track_length" title="Link to this definition"></a></dt>
+<dd><p>Calculates the total length of the track.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.find_segment">
+<span class="sig-name descname"><span class="pre">find_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.find_segment" title="Link to this definition"></a></dt>
+<dd><p>Finds the game segment at a given position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – The position to find the segment for.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Level.offset_segment">
+<span class="sig-name descname"><span class="pre">offset_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Level.offset_segment" title="Link to this definition"></a></dt>
+<dd><p>Returns the game segment at the specified offset.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tunnel_inside.html" class="btn btn-neutral float-left" title="TunnelInside Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="game.html" class="btn btn-neutral float-right" title="Game Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project proposal &mdash; VANTAGE 0.1 documentation</title>
+  <title>1. LevelGenerator class &mdash; VANTAGE 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -20,8 +20,7 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to VANTAGE’s documentation!" href="index.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,35 +43,20 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#srs">SRS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#sds">SDS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#vantage-module">vantage module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#levelgenerator-class">1. LevelGenerator class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#melbourne-class">2. Melbourne class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#goldcoast-class">3. GoldCoast class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gamesetting-class">4. GameSetting class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#background-class">5. Background class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#util-class">6. Util class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#worldobject-class">7. WorldObject class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#competitor-class">8. Competitor class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#countdown-class">9. CountDown class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#credit-class">10. Credit class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#highscore-class">11. HighScore class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#playerstatus-class">12. PlayerStatus class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#player-class">13. Player class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#playerselect-class">14. PlayerSelect class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#segment-class">15. Segment class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sprite-class">16. Sprite class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#titlescreen-class">17. TitleScreen class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tunnelentrance-class">18. TunnelEntrance class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tunnelinside-class">19. TunnelInside class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#level-class">20. Level class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#game-class">21. Game class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gamelauncher-class">22. GameLauncher class</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="project_proposal.html">Project Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html">SRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#introduction">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#system-overview">2. System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#external-interface-requirements">3. External Interface Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#functional-requirements">4. Functional Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#performance-requirements">5. Performance Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#design-constraints">6. Design Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#software-system-attributes">7. Software System Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html#other-requirements">8. Other Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sds.html">SDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level_generator.html">LevelGenerator Class</a></li>
 </ul>
 
         </div>
@@ -89,7 +73,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Project proposal</li>
+      <li class="breadcrumb-item active">1. LevelGenerator class</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/main.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -99,35 +83,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="project-proposal">
-<h1>Project proposal<a class="headerlink" href="#project-proposal" title="Link to this heading"></a></h1>
-</section>
-<section id="srs">
-<h1>SRS<a class="headerlink" href="#srs" title="Link to this heading"></a></h1>
-</section>
-<section id="sds">
-<h1>SDS<a class="headerlink" href="#sds" title="Link to this heading"></a></h1>
-</section>
-<section id="vantage-module">
-<h1>vantage module<a class="headerlink" href="#vantage-module" title="Link to this heading"></a></h1>
-<p>It contains all the classes used to develop VANTAGE(An Arcade Car Racing Game developed using PyGame).</p>
-<p>Here are all the python <code class="docutils literal notranslate"><span class="pre">libraries</span></code> and <code class="docutils literal notranslate"><span class="pre">modules</span></code> used in this project.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">csv</span>
-<span class="kn">from</span> <span class="nn">pygame</span> <span class="kn">import</span> <span class="n">Color</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pygame</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pygame.font</span> <span class="kn">import</span> <span class="n">Font</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<span class="kn">import</span> <span class="nn">random</span>
-</pre></div>
-</div>
-<section id="levelgenerator-class">
-<h2>1. LevelGenerator class<a class="headerlink" href="#levelgenerator-class" title="Link to this heading"></a></h2>
+  <section id="levelgenerator-class">
+<h1>1. LevelGenerator class<a class="headerlink" href="#levelgenerator-class" title="Link to this heading"></a></h1>
 <p>Contains the following static helper functions for generating the level files.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
@@ -298,7 +255,7 @@
 
 </section>
 <section id="melbourne-class">
-<h2>2. Melbourne class<a class="headerlink" href="#melbourne-class" title="Link to this heading"></a></h2>
+<h1>2. Melbourne class<a class="headerlink" href="#melbourne-class" title="Link to this heading"></a></h1>
 <p>Generates track segments for the Melbourne level and writes them to a CSV file.</p>
 <p>This class includes straight segments, hills, corners, and writes the resulting track data to a CSV file for use in the game.</p>
 <p><strong>Segments:</strong></p>
@@ -323,7 +280,7 @@ This class uses the static methods of the
 
 </section>
 <section id="goldcoast-class">
-<h2>3. GoldCoast class<a class="headerlink" href="#goldcoast-class" title="Link to this heading"></a></h2>
+<h1>3. GoldCoast class<a class="headerlink" href="#goldcoast-class" title="Link to this heading"></a></h1>
 <p>Generate track segments for the Goldcoast level and store them in a CSV file.</p>
 <blockquote>
 <div><p>This class includes straight segments, corners, hills, and a combination of these to form
@@ -356,11 +313,11 @@ the resulting track data to a CSV file <code class="docutils literal notranslate
 </div></blockquote>
 </section>
 <section id="gamesetting-class">
-<h2>4. GameSetting class<a class="headerlink" href="#gamesetting-class" title="Link to this heading"></a></h2>
+<h1>4. GameSetting class<a class="headerlink" href="#gamesetting-class" title="Link to this heading"></a></h1>
 <p>Contains all the constants used in the game.</p>
 </section>
 <section id="background-class">
-<h2>5. Background class<a class="headerlink" href="#background-class" title="Link to this heading"></a></h2>
+<h1>5. Background class<a class="headerlink" href="#background-class" title="Link to this heading"></a></h1>
 <p>Represents a single scrollable background in a level.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -417,7 +374,7 @@ the resulting track data to a CSV file <code class="docutils literal notranslate
 </div></blockquote>
 </section>
 <section id="util-class">
-<h2>6. Util class<a class="headerlink" href="#util-class" title="Link to this heading"></a></h2>
+<h1>6. Util class<a class="headerlink" href="#util-class" title="Link to this heading"></a></h1>
 <blockquote>
 <div><p>Contains helper methods that are used to control the game.</p>
 <dl class="py function">
@@ -483,7 +440,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="worldobject-class">
-<h2>7. WorldObject class<a class="headerlink" href="#worldobject-class" title="Link to this heading"></a></h2>
+<h1>7. WorldObject class<a class="headerlink" href="#worldobject-class" title="Link to this heading"></a></h1>
 <p>Represents a scalable object in the game world.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -551,7 +508,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="competitor-class">
-<h2>8. Competitor class<a class="headerlink" href="#competitor-class" title="Link to this heading"></a></h2>
+<h1>8. Competitor class<a class="headerlink" href="#competitor-class" title="Link to this heading"></a></h1>
 <p>Represents a single competitor car in a level.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -640,7 +597,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="countdown-class">
-<h2>9. CountDown class<a class="headerlink" href="#countdown-class" title="Link to this heading"></a></h2>
+<h1>9. CountDown class<a class="headerlink" href="#countdown-class" title="Link to this heading"></a></h1>
 <p>Plays a countdown before the level starts.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -688,7 +645,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="credit-class">
-<h2>10. Credit class<a class="headerlink" href="#credit-class" title="Link to this heading"></a></h2>
+<h1>10. Credit class<a class="headerlink" href="#credit-class" title="Link to this heading"></a></h1>
 <p>Plays the credits sequence at the end of the game.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -709,7 +666,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="highscore-class">
-<h2>11. HighScore class<a class="headerlink" href="#highscore-class" title="Link to this heading"></a></h2>
+<h1>11. HighScore class<a class="headerlink" href="#highscore-class" title="Link to this heading"></a></h1>
 <p>Wrapper over the high scores file.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -794,11 +751,11 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="playerstatus-class">
-<h2>12. PlayerStatus class<a class="headerlink" href="#playerstatus-class" title="Link to this heading"></a></h2>
+<h1>12. PlayerStatus class<a class="headerlink" href="#playerstatus-class" title="Link to this heading"></a></h1>
 <p>Represents the current status of the player.</p>
 </section>
 <section id="player-class">
-<h2>13. Player class<a class="headerlink" href="#player-class" title="Link to this heading"></a></h2>
+<h1>13. Player class<a class="headerlink" href="#player-class" title="Link to this heading"></a></h1>
 <p>Represents the player in the game world.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -873,7 +830,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="playerselect-class">
-<h2>14. PlayerSelect class<a class="headerlink" href="#playerselect-class" title="Link to this heading"></a></h2>
+<h1>14. PlayerSelect class<a class="headerlink" href="#playerselect-class" title="Link to this heading"></a></h1>
 <p>Manages the player selection screen.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -937,7 +894,7 @@ Passing in a value for x or y will override the calculated value.</p>
 </div></blockquote>
 </section>
 <section id="segment-class">
-<h2>15. Segment class<a class="headerlink" href="#segment-class" title="Link to this heading"></a></h2>
+<h1>15. Segment class<a class="headerlink" href="#segment-class" title="Link to this heading"></a></h1>
 <p>Represents a single segment in a level.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1112,7 +1069,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="sprite-class">
-<h2>16. Sprite class<a class="headerlink" href="#sprite-class" title="Link to this heading"></a></h2>
+<h1>16. Sprite class<a class="headerlink" href="#sprite-class" title="Link to this heading"></a></h1>
 <p>Represents a single sprite in a level.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1188,7 +1145,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="titlescreen-class">
-<h2>17. TitleScreen class<a class="headerlink" href="#titlescreen-class" title="Link to this heading"></a></h2>
+<h1>17. TitleScreen class<a class="headerlink" href="#titlescreen-class" title="Link to this heading"></a></h1>
 <p>Plays a title screen and waits for the user to insert a coin.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1260,7 +1217,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="tunnelentrance-class">
-<h2>18. TunnelEntrance class<a class="headerlink" href="#tunnelentrance-class" title="Link to this heading"></a></h2>
+<h1>18. TunnelEntrance class<a class="headerlink" href="#tunnelentrance-class" title="Link to this heading"></a></h1>
 <p>Represents a Tunnel Entrance polygon as we approach it.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1297,7 +1254,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="tunnelinside-class">
-<h2>19. TunnelInside class<a class="headerlink" href="#tunnelinside-class" title="Link to this heading"></a></h2>
+<h1>19. TunnelInside class<a class="headerlink" href="#tunnelinside-class" title="Link to this heading"></a></h1>
 <p>Represents a Tunnel inside (walls, roof) polygon as we approach it.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1342,7 +1299,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="level-class">
-<h2>20. Level class<a class="headerlink" href="#level-class" title="Link to this heading"></a></h2>
+<h1>20. Level class<a class="headerlink" href="#level-class" title="Link to this heading"></a></h1>
 <p>Represents a level in the game world.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1375,7 +1332,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="game-class">
-<h2>21. Game class<a class="headerlink" href="#game-class" title="Link to this heading"></a></h2>
+<h1>21. Game class<a class="headerlink" href="#game-class" title="Link to this heading"></a></h1>
 <p>Provides the game flow.</p>
 <blockquote>
 <div><p><strong>Attributes:</strong></p>
@@ -1405,7 +1362,7 @@ These are rendered after the track, but before the sprites.</p>
 </div></blockquote>
 </section>
 <section id="gamelauncher-class">
-<h2>22. GameLauncher class<a class="headerlink" href="#gamelauncher-class" title="Link to this heading"></a></h2>
+<h1>22. GameLauncher class<a class="headerlink" href="#gamelauncher-class" title="Link to this heading"></a></h1>
 <p>Vantage- Main Game Loop</p>
 <blockquote>
 <div><p><strong>Initialization:</strong></p>
@@ -1425,14 +1382,11 @@ These are rendered after the track, but before the sprites.</p>
 <p><strong>Note:</strong> The game loop continues indefinitely until the program is manually terminated.</p>
 </div></blockquote>
 </section>
-</section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to VANTAGE’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+          <footer>
 
   <hr/>
 

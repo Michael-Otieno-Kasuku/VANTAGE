@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameSetting Class &mdash; VANTAGE 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Background Class" href="background.html" />
+    <link rel="prev" title="GoldCoast Class" href="goldcoast.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            VANTAGE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_proposal.html">Project Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html">VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sds.html">SDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level_generator.html">LevelGenerator Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melbourne.html">Melbourne Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goldcoast.html">GoldCoast Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GameSetting Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#GameSetting"><code class="docutils literal notranslate"><span class="pre">GameSetting</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.FPS"><code class="docutils literal notranslate"><span class="pre">GameSetting.FPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.TITLE_FPS"><code class="docutils literal notranslate"><span class="pre">GameSetting.TITLE_FPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.COUNTDOWN_FPS"><code class="docutils literal notranslate"><span class="pre">GameSetting.COUNTDOWN_FPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.PLAYER_SELECT_FPS"><code class="docutils literal notranslate"><span class="pre">GameSetting.PLAYER_SELECT_FPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.CREDITS_FPS"><code class="docutils literal notranslate"><span class="pre">GameSetting.CREDITS_FPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.LEVEL_OVER_LAG"><code class="docutils literal notranslate"><span class="pre">GameSetting.LEVEL_OVER_LAG</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.TITLE_SCREEN"><code class="docutils literal notranslate"><span class="pre">GameSetting.TITLE_SCREEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.COUNTDOWN"><code class="docutils literal notranslate"><span class="pre">GameSetting.COUNTDOWN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.PLAYER_SELECT"><code class="docutils literal notranslate"><span class="pre">GameSetting.PLAYER_SELECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.FULL_SCREEN"><code class="docutils literal notranslate"><span class="pre">GameSetting.FULL_SCREEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.FRAME_RATE"><code class="docutils literal notranslate"><span class="pre">GameSetting.FRAME_RATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.DIMENSIONS"><code class="docutils literal notranslate"><span class="pre">GameSetting.DIMENSIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.MUSIC_VOLUME"><code class="docutils literal notranslate"><span class="pre">GameSetting.MUSIC_VOLUME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.SEGMENT_HEIGHT"><code class="docutils literal notranslate"><span class="pre">GameSetting.SEGMENT_HEIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.RUMBLE_LENGTH"><code class="docutils literal notranslate"><span class="pre">GameSetting.RUMBLE_LENGTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.DRAW_DISTANCE"><code class="docutils literal notranslate"><span class="pre">GameSetting.DRAW_DISTANCE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.ROAD_WIDTH"><code class="docutils literal notranslate"><span class="pre">GameSetting.ROAD_WIDTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.LANES"><code class="docutils literal notranslate"><span class="pre">GameSetting.LANES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.BOUNDS"><code class="docutils literal notranslate"><span class="pre">GameSetting.BOUNDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.TUNNEL_BOUNDS"><code class="docutils literal notranslate"><span class="pre">GameSetting.TUNNEL_BOUNDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.TUNNEL_HEIGHT"><code class="docutils literal notranslate"><span class="pre">GameSetting.TUNNEL_HEIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.TUNNEL_LIGHT_FREQ"><code class="docutils literal notranslate"><span class="pre">GameSetting.TUNNEL_LIGHT_FREQ</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.AUTO_DRIVE"><code class="docutils literal notranslate"><span class="pre">GameSetting.AUTO_DRIVE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.PLAYER_ANIM_HOLD"><code class="docutils literal notranslate"><span class="pre">GameSetting.PLAYER_ANIM_HOLD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.CHECKPOINT"><code class="docutils literal notranslate"><span class="pre">GameSetting.CHECKPOINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.LAP_DIFFICULTY_FACTOR"><code class="docutils literal notranslate"><span class="pre">GameSetting.LAP_DIFFICULTY_FACTOR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.LAPS_PER_LEVEL"><code class="docutils literal notranslate"><span class="pre">GameSetting.LAPS_PER_LEVEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.MINIMUM_DIFFICULTY"><code class="docutils literal notranslate"><span class="pre">GameSetting.MINIMUM_DIFFICULTY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.MINIMUM_ENGINE_DIST"><code class="docutils literal notranslate"><span class="pre">GameSetting.MINIMUM_ENGINE_DIST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.CRASH_DIVISOR"><code class="docutils literal notranslate"><span class="pre">GameSetting.CRASH_DIVISOR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.POINTS"><code class="docutils literal notranslate"><span class="pre">GameSetting.POINTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.CHANCE_OF_BONUSES"><code class="docutils literal notranslate"><span class="pre">GameSetting.CHANCE_OF_BONUSES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.POINT_GAIN_PROSTITUTE"><code class="docutils literal notranslate"><span class="pre">GameSetting.POINT_GAIN_PROSTITUTE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.POINT_LOSS_SPRITE"><code class="docutils literal notranslate"><span class="pre">GameSetting.POINT_LOSS_SPRITE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.POINT_LOSS_COMP"><code class="docutils literal notranslate"><span class="pre">GameSetting.POINT_LOSS_COMP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.POINT_MILESTONE"><code class="docutils literal notranslate"><span class="pre">GameSetting.POINT_MILESTONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.MINIMUM_CORNER_SMOKE"><code class="docutils literal notranslate"><span class="pre">GameSetting.MINIMUM_CORNER_SMOKE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.FIELD_OF_VIEW"><code class="docutils literal notranslate"><span class="pre">GameSetting.FIELD_OF_VIEW</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.CAMERA_HEIGHT"><code class="docutils literal notranslate"><span class="pre">GameSetting.CAMERA_HEIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.CAMERA_DEPTH"><code class="docutils literal notranslate"><span class="pre">GameSetting.CAMERA_DEPTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.BOTTOM_OFFSET"><code class="docutils literal notranslate"><span class="pre">GameSetting.BOTTOM_OFFSET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.SPEED_BOOST_DECREASE"><code class="docutils literal notranslate"><span class="pre">GameSetting.SPEED_BOOST_DECREASE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.SPEED_BOOST_LENGTH"><code class="docutils literal notranslate"><span class="pre">GameSetting.SPEED_BOOST_LENGTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.HARD_TOP_SPEED"><code class="docutils literal notranslate"><span class="pre">GameSetting.HARD_TOP_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.HARD_HANDLING"><code class="docutils literal notranslate"><span class="pre">GameSetting.HARD_HANDLING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.HARD_ACCELERATION"><code class="docutils literal notranslate"><span class="pre">GameSetting.HARD_ACCELERATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.PLAYER_Z"><code class="docutils literal notranslate"><span class="pre">GameSetting.PLAYER_Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.FONTS"><code class="docutils literal notranslate"><span class="pre">GameSetting.FONTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.COLOURS"><code class="docutils literal notranslate"><span class="pre">GameSetting.COLOURS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.LEVELS"><code class="docutils literal notranslate"><span class="pre">GameSetting.LEVELS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.PLAYERS"><code class="docutils literal notranslate"><span class="pre">GameSetting.PLAYERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GameSetting.SPRITES"><code class="docutils literal notranslate"><span class="pre">GameSetting.SPRITES</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Background Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Util Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldobject.html">WorldObject Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="competitor.html">Competitor Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countdown.html">CountDown Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credit.html">Credit Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="highscore.html">HighScore Class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VANTAGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">GameSetting Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/setting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gamesetting-class">
+<h1>GameSetting Class<a class="headerlink" href="#gamesetting-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="GameSetting">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GameSetting</span></span><a class="headerlink" href="#GameSetting" title="Link to this definition"></a></dt>
+<dd><p>This class represents the game settings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.FPS">
+<span class="sig-name descname"><span class="pre">FPS</span></span><a class="headerlink" href="#GameSetting.FPS" title="Link to this definition"></a></dt>
+<dd><p>Frames per second.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.TITLE_FPS">
+<span class="sig-name descname"><span class="pre">TITLE_FPS</span></span><a class="headerlink" href="#GameSetting.TITLE_FPS" title="Link to this definition"></a></dt>
+<dd><p>Frames per second for the title screen.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.COUNTDOWN_FPS">
+<span class="sig-name descname"><span class="pre">COUNTDOWN_FPS</span></span><a class="headerlink" href="#GameSetting.COUNTDOWN_FPS" title="Link to this definition"></a></dt>
+<dd><p>Frames per second for countdown.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.PLAYER_SELECT_FPS">
+<span class="sig-name descname"><span class="pre">PLAYER_SELECT_FPS</span></span><a class="headerlink" href="#GameSetting.PLAYER_SELECT_FPS" title="Link to this definition"></a></dt>
+<dd><p>Frames per second for player selection.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.CREDITS_FPS">
+<span class="sig-name descname"><span class="pre">CREDITS_FPS</span></span><a class="headerlink" href="#GameSetting.CREDITS_FPS" title="Link to this definition"></a></dt>
+<dd><p>Frames per second for credits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.LEVEL_OVER_LAG">
+<span class="sig-name descname"><span class="pre">LEVEL_OVER_LAG</span></span><a class="headerlink" href="#GameSetting.LEVEL_OVER_LAG" title="Link to this definition"></a></dt>
+<dd><p>Level over lag time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.TITLE_SCREEN">
+<span class="sig-name descname"><span class="pre">TITLE_SCREEN</span></span><a class="headerlink" href="#GameSetting.TITLE_SCREEN" title="Link to this definition"></a></dt>
+<dd><p>Boolean indicating whether the title screen is active.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.COUNTDOWN">
+<span class="sig-name descname"><span class="pre">COUNTDOWN</span></span><a class="headerlink" href="#GameSetting.COUNTDOWN" title="Link to this definition"></a></dt>
+<dd><p>Boolean indicating whether countdown is active.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.PLAYER_SELECT">
+<span class="sig-name descname"><span class="pre">PLAYER_SELECT</span></span><a class="headerlink" href="#GameSetting.PLAYER_SELECT" title="Link to this definition"></a></dt>
+<dd><p>Boolean indicating whether player selection is active.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.FULL_SCREEN">
+<span class="sig-name descname"><span class="pre">FULL_SCREEN</span></span><a class="headerlink" href="#GameSetting.FULL_SCREEN" title="Link to this definition"></a></dt>
+<dd><p>Boolean indicating whether full screen is enabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.FRAME_RATE">
+<span class="sig-name descname"><span class="pre">FRAME_RATE</span></span><a class="headerlink" href="#GameSetting.FRAME_RATE" title="Link to this definition"></a></dt>
+<dd><p>Frame rate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.DIMENSIONS">
+<span class="sig-name descname"><span class="pre">DIMENSIONS</span></span><a class="headerlink" href="#GameSetting.DIMENSIONS" title="Link to this definition"></a></dt>
+<dd><p>Screen dimensions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.MUSIC_VOLUME">
+<span class="sig-name descname"><span class="pre">MUSIC_VOLUME</span></span><a class="headerlink" href="#GameSetting.MUSIC_VOLUME" title="Link to this definition"></a></dt>
+<dd><p>Volume for music.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.SEGMENT_HEIGHT">
+<span class="sig-name descname"><span class="pre">SEGMENT_HEIGHT</span></span><a class="headerlink" href="#GameSetting.SEGMENT_HEIGHT" title="Link to this definition"></a></dt>
+<dd><p>Height of game segment.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.RUMBLE_LENGTH">
+<span class="sig-name descname"><span class="pre">RUMBLE_LENGTH</span></span><a class="headerlink" href="#GameSetting.RUMBLE_LENGTH" title="Link to this definition"></a></dt>
+<dd><p>Rumble length.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.DRAW_DISTANCE">
+<span class="sig-name descname"><span class="pre">DRAW_DISTANCE</span></span><a class="headerlink" href="#GameSetting.DRAW_DISTANCE" title="Link to this definition"></a></dt>
+<dd><p>Draw distance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.ROAD_WIDTH">
+<span class="sig-name descname"><span class="pre">ROAD_WIDTH</span></span><a class="headerlink" href="#GameSetting.ROAD_WIDTH" title="Link to this definition"></a></dt>
+<dd><p>Width of the road.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.LANES">
+<span class="sig-name descname"><span class="pre">LANES</span></span><a class="headerlink" href="#GameSetting.LANES" title="Link to this definition"></a></dt>
+<dd><p>Number of lanes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.BOUNDS">
+<span class="sig-name descname"><span class="pre">BOUNDS</span></span><a class="headerlink" href="#GameSetting.BOUNDS" title="Link to this definition"></a></dt>
+<dd><p>Bounds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.TUNNEL_BOUNDS">
+<span class="sig-name descname"><span class="pre">TUNNEL_BOUNDS</span></span><a class="headerlink" href="#GameSetting.TUNNEL_BOUNDS" title="Link to this definition"></a></dt>
+<dd><p>Tunnel bounds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.TUNNEL_HEIGHT">
+<span class="sig-name descname"><span class="pre">TUNNEL_HEIGHT</span></span><a class="headerlink" href="#GameSetting.TUNNEL_HEIGHT" title="Link to this definition"></a></dt>
+<dd><p>Tunnel height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.TUNNEL_LIGHT_FREQ">
+<span class="sig-name descname"><span class="pre">TUNNEL_LIGHT_FREQ</span></span><a class="headerlink" href="#GameSetting.TUNNEL_LIGHT_FREQ" title="Link to this definition"></a></dt>
+<dd><p>Frequency of tunnel lights.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.AUTO_DRIVE">
+<span class="sig-name descname"><span class="pre">AUTO_DRIVE</span></span><a class="headerlink" href="#GameSetting.AUTO_DRIVE" title="Link to this definition"></a></dt>
+<dd><p>Boolean indicating whether auto-drive is enabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.PLAYER_ANIM_HOLD">
+<span class="sig-name descname"><span class="pre">PLAYER_ANIM_HOLD</span></span><a class="headerlink" href="#GameSetting.PLAYER_ANIM_HOLD" title="Link to this definition"></a></dt>
+<dd><p>Player animation hold time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.CHECKPOINT">
+<span class="sig-name descname"><span class="pre">CHECKPOINT</span></span><a class="headerlink" href="#GameSetting.CHECKPOINT" title="Link to this definition"></a></dt>
+<dd><p>Checkpoint value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.LAP_DIFFICULTY_FACTOR">
+<span class="sig-name descname"><span class="pre">LAP_DIFFICULTY_FACTOR</span></span><a class="headerlink" href="#GameSetting.LAP_DIFFICULTY_FACTOR" title="Link to this definition"></a></dt>
+<dd><p>Lap difficulty factor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.LAPS_PER_LEVEL">
+<span class="sig-name descname"><span class="pre">LAPS_PER_LEVEL</span></span><a class="headerlink" href="#GameSetting.LAPS_PER_LEVEL" title="Link to this definition"></a></dt>
+<dd><p>Number of laps per level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.MINIMUM_DIFFICULTY">
+<span class="sig-name descname"><span class="pre">MINIMUM_DIFFICULTY</span></span><a class="headerlink" href="#GameSetting.MINIMUM_DIFFICULTY" title="Link to this definition"></a></dt>
+<dd><p>Minimum difficulty level.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.MINIMUM_ENGINE_DIST">
+<span class="sig-name descname"><span class="pre">MINIMUM_ENGINE_DIST</span></span><a class="headerlink" href="#GameSetting.MINIMUM_ENGINE_DIST" title="Link to this definition"></a></dt>
+<dd><p>Minimum engine distance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.CRASH_DIVISOR">
+<span class="sig-name descname"><span class="pre">CRASH_DIVISOR</span></span><a class="headerlink" href="#GameSetting.CRASH_DIVISOR" title="Link to this definition"></a></dt>
+<dd><p>Crash divisor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.POINTS">
+<span class="sig-name descname"><span class="pre">POINTS</span></span><a class="headerlink" href="#GameSetting.POINTS" title="Link to this definition"></a></dt>
+<dd><p>Points.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.CHANCE_OF_BONUSES">
+<span class="sig-name descname"><span class="pre">CHANCE_OF_BONUSES</span></span><a class="headerlink" href="#GameSetting.CHANCE_OF_BONUSES" title="Link to this definition"></a></dt>
+<dd><p>Chance of bonuses.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.POINT_GAIN_PROSTITUTE">
+<span class="sig-name descname"><span class="pre">POINT_GAIN_PROSTITUTE</span></span><a class="headerlink" href="#GameSetting.POINT_GAIN_PROSTITUTE" title="Link to this definition"></a></dt>
+<dd><p>Point gain from prostitutes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.POINT_LOSS_SPRITE">
+<span class="sig-name descname"><span class="pre">POINT_LOSS_SPRITE</span></span><a class="headerlink" href="#GameSetting.POINT_LOSS_SPRITE" title="Link to this definition"></a></dt>
+<dd><p>Point loss for sprites.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.POINT_LOSS_COMP">
+<span class="sig-name descname"><span class="pre">POINT_LOSS_COMP</span></span><a class="headerlink" href="#GameSetting.POINT_LOSS_COMP" title="Link to this definition"></a></dt>
+<dd><p>Point loss for competitors.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.POINT_MILESTONE">
+<span class="sig-name descname"><span class="pre">POINT_MILESTONE</span></span><a class="headerlink" href="#GameSetting.POINT_MILESTONE" title="Link to this definition"></a></dt>
+<dd><p>Point milestone.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.MINIMUM_CORNER_SMOKE">
+<span class="sig-name descname"><span class="pre">MINIMUM_CORNER_SMOKE</span></span><a class="headerlink" href="#GameSetting.MINIMUM_CORNER_SMOKE" title="Link to this definition"></a></dt>
+<dd><p>Minimum corner smoke.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.FIELD_OF_VIEW">
+<span class="sig-name descname"><span class="pre">FIELD_OF_VIEW</span></span><a class="headerlink" href="#GameSetting.FIELD_OF_VIEW" title="Link to this definition"></a></dt>
+<dd><p>Field of view in degrees.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.CAMERA_HEIGHT">
+<span class="sig-name descname"><span class="pre">CAMERA_HEIGHT</span></span><a class="headerlink" href="#GameSetting.CAMERA_HEIGHT" title="Link to this definition"></a></dt>
+<dd><p>Camera height.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.CAMERA_DEPTH">
+<span class="sig-name descname"><span class="pre">CAMERA_DEPTH</span></span><a class="headerlink" href="#GameSetting.CAMERA_DEPTH" title="Link to this definition"></a></dt>
+<dd><p>Camera depth.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.BOTTOM_OFFSET">
+<span class="sig-name descname"><span class="pre">BOTTOM_OFFSET</span></span><a class="headerlink" href="#GameSetting.BOTTOM_OFFSET" title="Link to this definition"></a></dt>
+<dd><p>Bottom offset.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.SPEED_BOOST_DECREASE">
+<span class="sig-name descname"><span class="pre">SPEED_BOOST_DECREASE</span></span><a class="headerlink" href="#GameSetting.SPEED_BOOST_DECREASE" title="Link to this definition"></a></dt>
+<dd><p>Speed boost decrease.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.SPEED_BOOST_LENGTH">
+<span class="sig-name descname"><span class="pre">SPEED_BOOST_LENGTH</span></span><a class="headerlink" href="#GameSetting.SPEED_BOOST_LENGTH" title="Link to this definition"></a></dt>
+<dd><p>Speed boost length.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.HARD_TOP_SPEED">
+<span class="sig-name descname"><span class="pre">HARD_TOP_SPEED</span></span><a class="headerlink" href="#GameSetting.HARD_TOP_SPEED" title="Link to this definition"></a></dt>
+<dd><p>Hard top speed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.HARD_HANDLING">
+<span class="sig-name descname"><span class="pre">HARD_HANDLING</span></span><a class="headerlink" href="#GameSetting.HARD_HANDLING" title="Link to this definition"></a></dt>
+<dd><p>Hard handling values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.HARD_ACCELERATION">
+<span class="sig-name descname"><span class="pre">HARD_ACCELERATION</span></span><a class="headerlink" href="#GameSetting.HARD_ACCELERATION" title="Link to this definition"></a></dt>
+<dd><p>Hard acceleration values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.PLAYER_Z">
+<span class="sig-name descname"><span class="pre">PLAYER_Z</span></span><a class="headerlink" href="#GameSetting.PLAYER_Z" title="Link to this definition"></a></dt>
+<dd><p>Player Z position.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.FONTS">
+<span class="sig-name descname"><span class="pre">FONTS</span></span><a class="headerlink" href="#GameSetting.FONTS" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing font paths.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.COLOURS">
+<span class="sig-name descname"><span class="pre">COLOURS</span></span><a class="headerlink" href="#GameSetting.COLOURS" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing color values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.LEVELS">
+<span class="sig-name descname"><span class="pre">LEVELS</span></span><a class="headerlink" href="#GameSetting.LEVELS" title="Link to this definition"></a></dt>
+<dd><p>List of level dictionaries.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.PLAYERS">
+<span class="sig-name descname"><span class="pre">PLAYERS</span></span><a class="headerlink" href="#GameSetting.PLAYERS" title="Link to this definition"></a></dt>
+<dd><p>List of player dictionaries.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="GameSetting.SPRITES">
+<span class="sig-name descname"><span class="pre">SPRITES</span></span><a class="headerlink" href="#GameSetting.SPRITES" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing sprite information.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="goldcoast.html" class="btn btn-neutral float-left" title="GoldCoast Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="background.html" class="btn btn-neutral float-right" title="Background Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

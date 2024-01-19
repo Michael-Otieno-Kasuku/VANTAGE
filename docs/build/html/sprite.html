@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sprite Class &mdash; VANTAGE 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TitleScreen Class" href="title_screen.html" />
+    <link rel="prev" title="Segment Class" href="segment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            VANTAGE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_proposal.html">Project Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="srs.html">VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sds.html">SDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level_generator.html">LevelGenerator Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melbourne.html">Melbourne Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goldcoast.html">GoldCoast Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting.html">GameSetting Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Background Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Util Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldobject.html">WorldObject Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="competitor.html">Competitor Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countdown.html">CountDown Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credit.html">Credit Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="highscore.html">HighScore Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="player_status.html">PlayerStatus Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="player.html">Player Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="player_select.html">PlayerSelect Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segment.html">Segment Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sprite Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Sprite"><code class="docutils literal notranslate"><span class="pre">Sprite</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.offset"><code class="docutils literal notranslate"><span class="pre">Sprite.offset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.offset_y"><code class="docutils literal notranslate"><span class="pre">Sprite.offset_y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.sprite"><code class="docutils literal notranslate"><span class="pre">Sprite.sprite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.hit"><code class="docutils literal notranslate"><span class="pre">Sprite.hit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.__init__"><code class="docutils literal notranslate"><span class="pre">Sprite.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.is_hooker"><code class="docutils literal notranslate"><span class="pre">Sprite.is_hooker()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.is_speed_boost"><code class="docutils literal notranslate"><span class="pre">Sprite.is_speed_boost()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.is_bonus"><code class="docutils literal notranslate"><span class="pre">Sprite.is_bonus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sprite.path"><code class="docutils literal notranslate"><span class="pre">Sprite.path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="title_screen.html">TitleScreen Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tunnel_entrance.html">TunnelEntrance Class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VANTAGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sprite Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sprite.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sprite-class">
+<h1>Sprite Class<a class="headerlink" href="#sprite-class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Sprite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sprite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WorldObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sprite" title="Link to this definition"></a></dt>
+<dd><p>A class representing a sprite in the game world.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Sprite.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><a class="headerlink" href="#Sprite.offset" title="Link to this definition"></a></dt>
+<dd><p>The x-offset of the sprite.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Sprite.offset_y">
+<span class="sig-name descname"><span class="pre">offset_y</span></span><a class="headerlink" href="#Sprite.offset_y" title="Link to this definition"></a></dt>
+<dd><p>The y-offset of the sprite.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Sprite.sprite">
+<span class="sig-name descname"><span class="pre">sprite</span></span><a class="headerlink" href="#Sprite.sprite" title="Link to this definition"></a></dt>
+<dd><p>The sprite information for the object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Sprite.hit">
+<span class="sig-name descname"><span class="pre">hit</span></span><a class="headerlink" href="#Sprite.hit" title="Link to this definition"></a></dt>
+<dd><p>A boolean indicating whether the sprite has been hit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sprite.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Sprite.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a Sprite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of the sprite.</p></li>
+<li><p><strong>x</strong> – The x-offset of the sprite.</p></li>
+<li><p><strong>y</strong> – The y-offset of the sprite.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sprite.is_hooker">
+<span class="sig-name descname"><span class="pre">is_hooker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sprite.is_hooker" title="Link to this definition"></a></dt>
+<dd><p>Checks if the sprite represents a “hooker”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sprite is a “hooker,” False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sprite.is_speed_boost">
+<span class="sig-name descname"><span class="pre">is_speed_boost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sprite.is_speed_boost" title="Link to this definition"></a></dt>
+<dd><p>Checks if the sprite represents a “speed boost.”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sprite is a “speed boost,” False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sprite.is_bonus">
+<span class="sig-name descname"><span class="pre">is_bonus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sprite.is_bonus" title="Link to this definition"></a></dt>
+<dd><p>Checks if the sprite represents a “bonus.”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sprite is a “bonus,” False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Sprite.path">
+<span class="sig-name descname"><span class="pre">path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sprite.path" title="Link to this definition"></a></dt>
+<dd><p>Retrieves the image path for the sprite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The image path as a pygame Surface.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="segment.html" class="btn btn-neutral float-left" title="Segment Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="title_screen.html" class="btn btn-neutral float-right" title="TitleScreen Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

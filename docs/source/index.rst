@@ -10,7 +10,33 @@ Welcome to VANTAGE's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   main
+   cv
+   project_proposal
+   srs
+   sds
+   level_generator
+   melbourne
+   goldcoast
+   setting
+   background
+   util
+   worldobject
+   competitor
+   countdown
+   credit
+   highscore
+   player_status
+   player
+   player_select
+   segment
+   sprite
+   title_screen
+   tunnel_entrance
+   tunnel_inside
+   level
+   game
+   game_launcher
+   
 
 
 

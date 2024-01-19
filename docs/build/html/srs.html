@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS) &mdash; VANTAGE 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SDS" href="sds.html" />
+    <link rel="prev" title="Project Proposal" href="project_proposal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            VANTAGE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_proposal.html">Project Proposal</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-overview">2. System Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-interface-requirements">3. External Interface Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-requirements">4. Functional Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance-requirements">5. Performance Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-constraints">6. Design Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-system-attributes">7. Software System Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-requirements">8. Other Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sds.html">SDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level_generator.html">LevelGenerator Class</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VANTAGE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/srs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vantage-arcade-car-racing-game-software-requirements-specification-srs">
+<h1>VANTAGE - Arcade Car Racing Game Software Requirements Specification (SRS)<a class="headerlink" href="#vantage-arcade-car-racing-game-software-requirements-specification-srs" title="Link to this heading"></a></h1>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Introduction</p>
+<p>1.1 Purpose</p>
+<p>1.2 Scope</p>
+<p>1.3 Definitions, Acronyms, and Abbreviations</p>
+<p>1.4 References</p>
+<p>1.5 Overview</p>
+</li>
+<li><p>System Overview</p>
+<p>2.1 System Architecture</p>
+<p>2.2 Directory Structure</p>
+<p>2.3 Modules Overview</p>
+</li>
+<li><p>External Interface Requirements</p>
+<p>3.1 User Interfaces</p>
+<blockquote>
+<div><p>3.1.1 Game Window</p>
+<p>3.1.2 Player Selection Screen</p>
+<p>3.1.3 Title Screen</p>
+</div></blockquote>
+<p>3.2 Hardware Interfaces</p>
+<p>3.3 Software Interfaces</p>
+<p>3.4 Communication Interfaces</p>
+</li>
+<li><p>Functional Requirements</p>
+<p>4.1 Player Selection</p>
+<blockquote>
+<div><p>4.1.1 Navigate Player Selection Screen</p>
+<p>4.1.2 Choose Player</p>
+</div></blockquote>
+<p>4.2 Title Screen</p>
+<blockquote>
+<div><p>4.2.1 Display Title Screen</p>
+<p>4.2.2 Wait for User Input</p>
+</div></blockquote>
+<p>4.3 Game Flow</p>
+<blockquote>
+<div><p>4.3.1 Initialize Game</p>
+<p>4.3.2 Play Game</p>
+<p>4.3.3 Pause Game</p>
+<p>4.3.4 Display High Scores</p>
+<p>4.3.5 Handle Game Over</p>
+<p>4.3.6 Handle Level Completion</p>
+</div></blockquote>
+<p>4.4 Level Generation</p>
+<blockquote>
+<div><p>4.4.1 Generate Gold Coast Level</p>
+<p>4.4.2 Generate Melbourne Level</p>
+<p>4.4.3 Generate Test Level</p>
+</div></blockquote>
+<p>4.5 Rendering</p>
+<blockquote>
+<div><p>4.5.1 Render Background</p>
+<p>4.5.2 Render Competitors</p>
+<p>4.5.3 Render Countdown</p>
+<p>4.5.4 Render Credits</p>
+<p>4.5.5 Render Game</p>
+<p>4.5.6 Render High Scores</p>
+<p>4.5.7 Render Player</p>
+<p>4.5.8 Render Sprites</p>
+<p>4.5.9 Render Tunnel Entrance</p>
+<p>4.5.10 Render Tunnel Inside</p>
+</div></blockquote>
+</li>
+<li><p>Performance Requirements</p>
+<p>5.1 Frame Rate</p>
+<p>5.2 Load Time</p>
+</li>
+<li><p>Design Constraints</p>
+<p>6.1 Pygame Library</p>
+<p>6.2 Operating System Compatibility</p>
+<p>6.3 Hardware Requirements</p>
+</li>
+<li><p>Software System Attributes</p>
+<p>7.1 Reliability</p>
+<p>7.2 Availability</p>
+<p>7.3 Security</p>
+<p>7.4 Maintainability</p>
+<p>7.5 Portability</p>
+</li>
+<li><p>Other Requirements</p>
+<p>8.1 Licensing</p>
+<p>8.2 Documentation</p>
+<p>8.3 Testing</p>
+<p>8.4 Usability</p>
+<p>8.5 Error Handling</p>
+</li>
+</ol>
+</section>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>1.1 Purpose</p>
+<p>The purpose of this Software Requirements Specification (SRS) document is to provide a comprehensive overview of the design and functionality of the VANTAGE Arcade Car Racing Game.</p>
+<p>1.2 Scope</p>
+<p>This document outlines the features, modules, and requirements of the VANTAGE game, detailing its architecture, external interfaces, and functional specifications. It serves as a guide for developers, testers, and stakeholders involved in the project.</p>
+<p>1.3 Definitions, Acronyms, and Abbreviations</p>
+<ul class="simple">
+<li><p><strong>SRS:</strong> Software Requirements Specification</p></li>
+<li><p><strong>FPS:</strong> Frames Per Second</p></li>
+</ul>
+<p>1.4 References</p>
+<ul class="simple">
+<li><p>Pygame Documentation</p></li>
+<li><p>GNU Public License</p></li>
+</ul>
+<p>1.5 Overview</p>
+<p>VANTAGE is an arcade-style car racing game designed to provide an engaging and immersive experience for players. The game includes features such as player selection, multiple levels, competitors, tunnels, and various in-game objects. The document covers the overall system architecture, external interfaces, functional requirements, performance requirements, design constraints, software system attributes, and other relevant aspects.</p>
+</section>
+<section id="system-overview">
+<h2>2. System Overview<a class="headerlink" href="#system-overview" title="Link to this heading"></a></h2>
+<p>2.1 System Architecture</p>
+<p>The VANTAGE game follows a modular architecture with key components including player selection, title screen, game flow management, level generation, and rendering. These components interact to create a seamless and enjoyable gaming experience.</p>
+<p>2.2 Directory Structure</p>
+<p>The game directory is organized into subdirectories, such as ‘build,’ ‘documentations,’ ‘scripts,’ ‘lib,’ ‘dat,’ and ‘vintage.’ Each subdirectory serves a specific purpose, such as housing executable files, documentation, scripts for level generation, game libraries, high scores data, and the main game functionalities.</p>
+<p>2.3 Modules Overview</p>
+<p>The game is divided into several modules, each responsible for specific aspects of the game. Notable modules include ‘background,’ ‘competitor,’ ‘countdown,’ ‘credits,’ ‘game,’ ‘high_scores,’ ‘level,’ ‘main,’ ‘player_select,’ ‘player,’ ‘segment,’ ‘settings,’ ‘sprite,’ ‘title_screen,’ ‘tunnel_entrance,’ ‘tunnel_inside,’ and ‘world_object.’</p>
+</section>
+<section id="external-interface-requirements">
+<h2>3. External Interface Requirements<a class="headerlink" href="#external-interface-requirements" title="Link to this heading"></a></h2>
+<p>3.1 User Interfaces</p>
+<p>3.1.1 Game Window</p>
+<p>The game window provides the main interface for gameplay. It renders the game environment, player’s car, competitors, and other in-game elements.</p>
+<p>3.1.2 Player Selection Screen</p>
+<p>The player selection screen allows users to navigate through available characters, view details, and choose a player for the game.</p>
+<p>3.1.3 Title Screen</p>
+<p>The title screen serves as an introduction to the game, displaying logos, animations, and waiting for user input to proceed.</p>
+<p>3.2 Hardware Interfaces</p>
+<p>The game interacts with the hardware components for user input, such as keyboard or controller devices.</p>
+<p>3.3 Software Interfaces</p>
+<p>The game utilizes the Pygame library for graphics, sound, and event handling.</p>
+<p>3.4 Communication Interfaces</p>
+<p>No external communication interfaces are required for the standalone game.</p>
+</section>
+<section id="functional-requirements">
+<h2>4. Functional Requirements<a class="headerlink" href="#functional-requirements" title="Link to this heading"></a></h2>
+<p>4.1 Player Selection</p>
+<p>4.1.1 Navigate Player Selection Screen</p>
+<p>Players can navigate through available characters using input devices to choose a character.</p>
+<p>4.1.2 Choose Player</p>
+<p>Players can finalize their selection, confirming the chosen player for the game.</p>
+<p>4.2 Title Screen</p>
+<p>4.2.1 Display Title Screen</p>
+<p>The title screen displays logos and animations to introduce the game.</p>
+<p>4.2.2 Wait for User Input</p>
+<p>The title screen waits for user input, allowing players to proceed to the player selection screen.</p>
+<p>4.3 Game Flow</p>
+<p>4.3.1 Initialize Game</p>
+<p>The game initializes with the selected player, setting up the game environment.</p>
+<p>4.3.2 Play Game</p>
+<p>Players control their car, competing against competitors, and completing laps in the race.</p>
+<p>4.3.3 Pause Game</p>
+<p>Players can pause the game during gameplay, displaying a ‘Paused’ message.</p>
+<p>4.3.4 Display High Scores</p>
+<p>High scores are displayed between levels or when waiting for a new player.</p>
+<p>4.3.5 Handle Game Over</p>
+<p>The game handles the end of a player’s session, displaying game over information.</p>
+<p>4.3.6 Handle Level Completion</p>
+<p>Upon completing a level, the game displays relevant information and progresses to the next level.</p>
+<p>4.4 Level Generation</p>
+<p>4.4.1 Generate Gold Coast Level</p>
+<p>The game generates the Gold Coast level with specific track segments and features.</p>
+<p>4.4.2 Generate Melbourne Level</p>
+<p>The game generates the Melbourne level with unique track segments and features.</p>
+<p>4.4.3 Generate Test Level</p>
+<p>A test level is generated with various features for testing purposes.</p>
+<p>4.5 Rendering</p>
+<p>4.5.1 Render Background</p>
+<p>The background is rendered, providing a scrollable environment during gameplay.</p>
+<p>4.5.2 Render Competitors</p>
+<p>Competitor cars are rendered on the track, providing a dynamic racing experience.</p>
+<p>4.5.3 Render Countdown</p>
+<p>A countdown is displayed before the start of a level.</p>
+<p>4.5.4 Render Credits</p>
+<p>Credits are displayed at the end of the game.</p>
+<p>4.5.5 Render Game</p>
+<p>The main game environment is rendered, including the player’s car and track.</p>
+<p>4.5.6 Render High Scores</p>
+<p>High scores are rendered for players to view.</p>
+<p>4.5.7 Render Player</p>
+<p>The player’s car is rendered, responding to user input for steering and acceleration.</p>
+<p>4.5.8 Render Sprites</p>
+<p>Various sprites, including bonuses, speed boosts, and competitors, are rendered on the track.</p>
+<p>4.5.9 Render Tunnel Entrance</p>
+<p>The tunnel entrance is rendered as the player approaches.</p>
+<p>4.5.10 Render Tunnel Inside</p>
+<p>The interior of the tunnel, including walls and roof, is rendered as the player passes through.</p>
+</section>
+<section id="performance-requirements">
+<h2>5. Performance Requirements<a class="headerlink" href="#performance-requirements" title="Link to this heading"></a></h2>
+<p>5.1 Frame Rate</p>
+<p>The game should maintain a smooth frame rate to ensure a visually appealing and responsive gaming experience. The target frame rate is set to 60 FPS.</p>
+<p>5.2 Load Time</p>
+<p>The game should load within a reasonable time frame, providing quick access to gameplay. The load time target is set to be under 10 seconds.</p>
+</section>
+<section id="design-constraints">
+<h2>6. Design Constraints<a class="headerlink" href="#design-constraints" title="Link to this heading"></a></h2>
+<p>6.1 Pygame Library</p>
+<p>The game is designed to utilize the Pygame library for graphics, sound, and event handling. Any changes or updates to Pygame may impact the game’s functionality.</p>
+<p>6.2 Operating System Compatibility</p>
+<p>The game is designed to run on platforms compatible with Pygame. Compatibility with future operating systems or changes to existing operating systems should be considered.</p>
+<p>6.3 Hardware Requirements</p>
+<p>Players need compatible input devices, such as a keyboard or controller, to interact with the game. The game’s performance may vary based on the hardware specifications of the player’s system.</p>
+</section>
+<section id="software-system-attributes">
+<h2>7. Software System Attributes<a class="headerlink" href="#software-system-attributes" title="Link to this heading"></a></h2>
+<p>7.1 Reliability</p>
+<p>The game should be reliable, providing a stable and consistent experience without unexpected crashes or errors.</p>
+<p>7.2 Availability</p>
+<p>The game should be available for players to access and play without unnecessary downtime.</p>
+<p>7.3 Security</p>
+<p>As a standalone game, security considerations primarily involve protecting user data and preventing unauthorized access.</p>
+<p>7.4 Maintainability</p>
+<p>The game should be designed with maintainability in mind, allowing for future updates, enhancements, and bug fixes.</p>
+<p>7.5 Portability</p>
+<p>The game, built on the Pygame library, should be portable across platforms compatible with Pygame.</p>
+</section>
+<section id="other-requirements">
+<h2>8. Other Requirements<a class="headerlink" href="#other-requirements" title="Link to this heading"></a></h2>
+<p>8.1 Licensing</p>
+<p>The game is licensed under the GNU Public License. All licensing requirements and attributions must be adhered to.</p>
+<p>8.2 Documentation</p>
+<p>Comprehensive documentation, including this Software Requirements Specification, should be maintained for reference by developers, testers, and other stakeholders.</p>
+<p>8.3 Testing</p>
+<p>A thorough testing process should be conducted to ensure the game’s functionality, performance, and reliability. Testing should cover player selection, gameplay mechanics, level generation, rendering, and other critical aspects.</p>
+<p>8.4 Usability</p>
+<p>The game should provide a user-friendly experience, with intuitive controls and clear instructions. The player interface should be designed for ease of navigation and understanding.</p>
+<p>8.5 Error Handling</p>
+<p>The game should incorporate robust error handling mechanisms to gracefully manage unexpected situations, providing informative error messages and avoiding crashes.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="project_proposal.html" class="btn btn-neutral float-left" title="Project Proposal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sds.html" class="btn btn-neutral float-right" title="SDS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Michael Otieno Kasuku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
