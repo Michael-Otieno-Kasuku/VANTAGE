@@ -354,7 +354,7 @@ class GoldCoast:
 
 class GameSetting:
     FPS                     = 60
-    TITLE_FPS               = 60
+    TITLE_FPS               = 20
     COUNTDOWN_FPS           = 1
     PLAYER_SELECT_FPS       = 10
     CREDITS_FPS             = 10
