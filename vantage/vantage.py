@@ -1,5 +1,9 @@
 """
 Try to write high scores to a csv file and also try to read and display them when the game is over.
+
+You may also work on the fonts  and FPS so that the game can look attractive.
+
+You can also add more functionalities to the game later including a better UI
 """
 import math
 import csv
@@ -1433,7 +1437,6 @@ class HighScore:
         today = dt.date.today()
         self.high_scores.append([today, score])
         self.__sort()
-        self.high_scores.pop()
         self.__write_high_scores()
 
     def __sort(self):
