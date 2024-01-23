@@ -80,13 +80,91 @@ class MathArtPlotter:
         self.init()
         glutMainLoop()
     
-def main():
-    width = 640
-    height = 480
-    axrng = 50
-    output_file = "player_select.png"
-    math_art_plotter = MathArtPlotter(width, height, axrng, output_file)
-    math_art_plotter.run()
+    @staticmethod
+    def main():
+        width = 640
+        height = 480
+        axrng = 50
+        output_file = "player_select.png"
+        math_art_plotter = MathArtPlotter(width, height, axrng, output_file)
+        math_art_plotter.run()
+
+class FernPlotter:
+    def __init__(self, width, height, output_file):
+        self.width = width
+        self.height = height
+        self.output_file = output_file
+    
+    def init(self):
+        glEnable(GL_BLEND)
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+        glClearColor(1.0,1.0,1.0,1.0)#set the background color to white
+        glColor3f(0.3,0.6,0.2)#the color of the dots to green
+        glMatrixMode(GL_PROJECTION)
+        glLoadIdentity()
+        gluOrtho2D(-3,3.0,0.0,10.5)
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity()
+    
+    def plotfunc(self):
+        x = -1.5
+        y = 0.75
+
+        glClear(GL_COLOR_BUFFER_BIT)
+
+        for n in range(0, 100000):
+            v = random.random()
+            if v >= 0 and v <= 0.8000:
+                a, b, c, d, e, f = 0, 1.6, -2.5*pi/180, -2.5*pi/180, 0.85, 0.85
+            elif v > 0.8000 and v <= 0.8050:
+                a, b, c, d, e, f = 0, 0, 0*pi/180, 0*pi/180, 0, 0.16
+            elif v > 0.8050 and v <= 0.9025:
+                a, b, c, d, e, f = 0, 1.6, 49*pi/180, 49*pi/180, 0.3, 0.34
+            elif v > 0.9025 and v <= 1.0:
+                a, b, c, d, e, f = 0, 0.44, 120*pi/180, -50*pi/180, 0.3, 0.37
+
+            xx, yy = x, y
+            x = e * xx * cos(c) - f * yy * sin(d) + a
+            y = e * xx * sin(c) + f * yy * cos(d) + b
+
+            if n > 10:
+                glBegin(GL_POINTS)
+                glVertex2f(x, y)
+                glEnd()
+                glFlush()
+
+        # Save the image
+        self.save_image()
+    
+    def save_image(self):
+        glReadBuffer(GL_FRONT)
+        pixels = glReadPixels(0, 0, self.width, self.height, GL_RGBA, GL_UNSIGNED_BYTE)
+        image = Image.frombytes("RGBA", (self.width, self.height), pixels)
+        image = image.transpose(Image.FLIP_TOP_BOTTOM)
+        image.save(self.output_file, "PNG")
+
+    def keyboard(self, key, x, y):
+        if key == chr(27) or key == "q":
+            sys.exit()
+
+    def run(self):
+        glutInit(sys.argv)
+        glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE)
+        glutInitWindowPosition(100, 100)
+        glutInitWindowSize(self.width, self.height)
+        glutCreateWindow("Fern")
+        glutDisplayFunc(self.plotfunc)
+        glutKeyboardFunc(self.keyboard)
+        self.init()
+        glutMainLoop()
+    
+    @staticmethod
+    def main():
+        width = 96
+        height = 62
+        output_file = "bush1.png"
+        fern_plotter = FernPlotter(width, height, output_file)
+        fern_plotter.run()
 
 class LevelGenerator:
     @staticmethod
@@ -181,6 +259,7 @@ class Melbourne:
         segments = []
         sprites = []
         name = "melbourne"
+
         segments += LevelGenerator.add_straight(100,0)
         segments += LevelGenerator.add_hill(50, 50, 50, 40, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(500, LevelGenerator.last_y(segments))
@@ -189,6 +268,7 @@ class Melbourne:
         segments += LevelGenerator.add_corner(30,45,40,6, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(90, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_hill(30,30,30,0, LevelGenerator.last_y(segments))
+
         segments += LevelGenerator.add_straight(150, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(30, 45,40,6, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(200, LevelGenerator.last_y(segments))
@@ -199,6 +279,7 @@ class Melbourne:
         segments += LevelGenerator.add_corner(30,45,40,-6, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(30,45,40,4, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(50, LevelGenerator.last_y(segments))
+
         segments += LevelGenerator.add_hill(20, 20,20, 40, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(50, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(25,45,25,5, LevelGenerator.last_y(segments),30)
@@ -210,6 +291,7 @@ class Melbourne:
         segments += LevelGenerator.add_straight(200, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(120,200,120,6, LevelGenerator.last_y(segments),0)
         segments += LevelGenerator.add_straight(300, LevelGenerator.last_y(segments))
+
         LevelGenerator.write(f"{name}.csv", segments)
 
 class GoldCoast:
@@ -218,6 +300,7 @@ class GoldCoast:
         segments = []
         sprites = []
         name = "goldcoast"
+
         segments += LevelGenerator.add_straight(100,0)
         segments += LevelGenerator.add_corner(30,85,40,5,0,20)
         segments += LevelGenerator.add_straight(100, LevelGenerator.last_y(segments))
@@ -227,6 +310,7 @@ class GoldCoast:
         segments += LevelGenerator.add_corner(30,45,40,-4, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_hill(25,25,25,0, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(150,0)
+
         segments += LevelGenerator.add_corner(30,85,20,5,0,20)
         segments += LevelGenerator.add_corner(20,85,40,5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(80,45,40,6, LevelGenerator.last_y(segments))
@@ -239,6 +323,7 @@ class GoldCoast:
         segments += LevelGenerator.add_straight(5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_hill(25,25,25,5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(5, LevelGenerator.last_y(segments))
+
         segments += LevelGenerator.add_hill(25,25,25,20, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_hill(25,25,25,0, LevelGenerator.last_y(segments))
@@ -247,6 +332,7 @@ class GoldCoast:
         segments += LevelGenerator.add_straight(5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_hill(25,25,25,0, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(40,0)
+
         segments += LevelGenerator.add_corner(30,55,40,5,0,25)
         segments += LevelGenerator.add_straight(40, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(30,55,40,5, LevelGenerator.last_y(segments),0)
@@ -254,6 +340,7 @@ class GoldCoast:
         segments += LevelGenerator.add_corner(20,20,20,3, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(20,20,20,-3, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(20,20,20,3, LevelGenerator.last_y(segments))
+
         segments += LevelGenerator.add_corner(20,20,20,-3, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(20,20,20,3, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(20,20,20,-3, LevelGenerator.last_y(segments))
@@ -262,6 +349,7 @@ class GoldCoast:
         segments += LevelGenerator.add_corner(20,20,20,5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(20,20,20,-5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(100, LevelGenerator.last_y(segments))
+        
         LevelGenerator.write(f"{name}.csv", segments)
 
 class GameSetting:
