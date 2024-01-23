@@ -2269,7 +2269,7 @@ class Level:
         self.competitors = []
 
     def build(self):
-        build_path = lambda p: os.path.join("vantage", "levels", p, "{0}.csv".format(self.slug))
+        build_path = lambda p: os.path.join("vantagel", "levels", p, "{0}.csv".format(self.slug))
 
         with open(build_path("tracks"), "r") as csvfile:
             for row in csv.reader(csvfile):
