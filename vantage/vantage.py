@@ -4,6 +4,8 @@ Try to write high scores to a csv file and also try to read and display them whe
 You may also work on the fonts  and FPS so that the game can look attractive.
 
 You can also add more functionalities to the game later including a better UI
+
+Make use of the LevelGenerator class to come up with more interactive and complicated tracks.
 """
 import math
 import csv
