@@ -1,3 +1,7 @@
+"""
+Why is it that after going through all the three laps of the first level it says game over.
+Why is it that the high scores are not displayed or the new high score recorded added to the file.
+"""
 import math
 import csv
 from pygame import Color
@@ -13,7 +17,8 @@ import random
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
-from numpy import *
+#from numpy import * Uncomment this line only if you want to work on graphics
+#numpy has some of the methods such as random that actually collide with those from the random class
 from PIL import Image
 
 class MathArtPlotter:
