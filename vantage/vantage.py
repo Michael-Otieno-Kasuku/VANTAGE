@@ -353,7 +353,7 @@ class GoldCoast:
         LevelGenerator.write(f"{name}.csv", segments)
 
 class GameSetting:
-    FPS                     = 360
+    FPS                     = 60
     TITLE_FPS               = 60
     COUNTDOWN_FPS           = 1
     PLAYER_SELECT_FPS       = 10
@@ -370,7 +370,7 @@ class GameSetting:
     RUMBLE_LENGTH           = 3
     DRAW_DISTANCE           = 125
     ROAD_WIDTH              = 2100
-    LANES                   = 6
+    LANES                   = 4
     BOUNDS                  = 2.1
     TUNNEL_BOUNDS           = 0.85
     TUNNEL_HEIGHT           = 90
