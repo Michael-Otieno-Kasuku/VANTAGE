@@ -7,12 +7,12 @@ Written using Python 3.9.2 and Pygame 2.5.2 as a third year Computer Science Pro
 Ensure that you have [Python 3.x](https://www.python.org/) and [Pygame](http://www.pygame.org/download.shtml) installed, and then:
 
 ```
-  $ ./play
+  $ ./vantage
 ```
 
 Accelleration and steering is performed via the arrow keys. [ENTER] to start, [ESC] to kill the game in fullscreen mode.
 
-Many in-game settings can be changed in `./vintage/settings.py`
+Many in-game settings can be changed in `GameSetting Class`
 
 
 ### TODO

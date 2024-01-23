@@ -10,6 +10,83 @@ import json
 import datetime as dt
 from enum import Enum
 import random
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from OpenGL.GLUT import *
+from numpy import *
+from PIL import Image
+
+class MathArtPlotter:
+    def __init__(self, width, height, axrng,output_file):
+        self.width = width
+        self.height = height
+        self.axrng = axrng
+        self.step_size = (2.0*self.axrng)/self.width
+        self.output_file = output_file
+
+    def init(self):
+        glClearColor(1.0,0.1,0.06,0.69)
+    
+    def plot_math_art(self):
+        glClear(GL_COLOR_BUFFER_BIT)
+
+        for x in arange(-self.axrng, self.axrng,self.step_size):
+            for y in arange(-self.axrng, self.axrng, self.step_size):
+                r = cos(x) + sin(y)
+                glColor3f(tan(r*r), sin(x*r)*cos(r*y), sin(y*x)*tan(r))
+                glBegin(GL_POINTS)
+                glVertex2f(x,y)
+                glEnd()
+                glFlush()
+            
+        self.save_image()
+    
+    def reshape(self, w, h):
+        if h == 0:
+            h = 1
+        
+        glViewport(0,0,w,h)
+        glMatrixMode(GL_PROJECTION)
+        glLoadIdentity()
+
+        if w <= h:
+            gluOrtho2D(-self.axrng, self.axrng, -self.axrng*h/w, self.axrng*h/w)
+        else:
+            gluOrtho2D(-self.axrng*w/h, self.axrng*w/h, -self.axrng, self.axrng)
+
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity()
+    
+    def keyboard(self, key, x, y):
+        if key == chr(27) or key == "q":
+            sys.exit()
+    
+    def save_image(self):
+        glReadBuffer(GL_FRONT)
+        pixels = glReadPixels(0, 0, self.width, self.height, GL_RGB, GL_UNSIGNED_BYTE)
+        image = Image.frombytes("RGB", (self.width, self.height), pixels)
+        image = image.transpose(Image.FLIP_TOP_BOTTOM)
+        image.save(self.output_file, "PNG")
+    
+    def run(self):
+        glutInit(sys.argv)
+        glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE)
+        glutInitWindowPosition(100, 100)
+        glutInitWindowSize(self.width, self.height)
+        glutCreateWindow("Title Screen")
+        glutReshapeFunc(self.reshape)
+        glutDisplayFunc(self.plot_math_art)
+        glutKeyboardFunc(self.keyboard)
+        self.init()
+        glutMainLoop()
+    
+def main():
+    width = 640
+    height = 480
+    axrng = 50
+    output_file = "player_select.png"
+    math_art_plotter = MathArtPlotter(width, height, axrng, output_file)
+    math_art_plotter.run()
 
 class LevelGenerator:
     @staticmethod
@@ -32,24 +109,21 @@ class LevelGenerator:
         last_y = start_y
         next_y = start_y
 
-        #Ease into the corner
         for n in range(enter):
             last_y=next_y
             next_y = LevelGenerator.ease_in_out(start_y, peak, n/total)
 
             segments.append([LevelGenerator.ease_in(0,curve,n/enter),last_y,next_y])
-        
-        #Hold
+
         for n in range(hold):
             last_y = next_y
-            next_y = LevelGenerator.ease_in_out(start_y,peak,(n+enter)/total)
+            next_y = LevelGenerator.ease_in_out(start_y, peak,(n + enter) / total)
 
             segments.append([curve,last_y,next_y])
-        
-        #Ease out of corner
+
         for n in range(exit):
             last_y = next_y
-            next_y = LevelGenerator.ease_in_out(start_y,peak,(n+enter+hold)/total)
+            next_y = LevelGenerator.ease_in_out(start_y,peak,(n + enter + hold) / total)
 
             segments.append([LevelGenerator.ease_in_out(curve,0,n/exit),last_y,next_y])
         
@@ -68,7 +142,6 @@ class LevelGenerator:
             y = LevelGenerator.ease_in_out(start_y,peak,n/total)
             segments.append([0,last_y,y])
         
-
         for n in range(hold):
             last_y = y
             y = LevelGenerator.ease_in_out(start_y,peak,(n+enter)/total)
@@ -192,7 +265,7 @@ class GoldCoast:
         LevelGenerator.write(f"{name}.csv", segments)
 
 class GameSetting:
-    FPS                     = 60
+    FPS                     = 90
     TITLE_FPS               = 20
     COUNTDOWN_FPS           = 1
     PLAYER_SELECT_FPS       = 10
@@ -239,6 +312,7 @@ class GameSetting:
     HARD_HANDLING           = [0.1,0.45]
     HARD_ACCELERATION       = [2.0,7.0]
     PLAYER_Z                = (CAMERA_HEIGHT*CAMERA_DEPTH)
+    BONUS_AMOUNT            = 3
     FONTS                   = {
         "retro_computer": os.path.join("assets/fonts","PressStart2P.ttf"),
         "fipps"         : os.path.join("assets/fonts","Fipps-Regular.otf")
