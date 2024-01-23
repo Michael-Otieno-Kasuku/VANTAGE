@@ -1441,7 +1441,7 @@ class HighScore:
         self.high_scores.sort(key=lambda hs: hs[1], reverse=True)
 
     def __write_high_scores(self):
-        hs_file_path = os.path.join("assets/data", "highscores.json")
+        hs_file_path = os.path.join("vantage/dat", "highscores.json")
         with open(hs_file_path, "w") as hs:
             jdata = list(map(lambda hs: [hs[0].strftime("%Y-%m-%d"), hs[1]], self.high_scores))
             json.dump(jdata, hs)
@@ -2287,7 +2287,7 @@ class Level:
         with open(build_path("competitors"), "r") as csvfile:
             for row in csv.reader(csvfile):
                 self.add_competitor(int(row[0]), float(row[1]), row[2], float(row[3]))
-                
+
         with open(build_path("tunnels"), "r") as csvfile:
             for row in csv.reader(csvfile):
                 self.add_tunnel(int(row[0]), int(row[1]))
