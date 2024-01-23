@@ -1,6 +1,5 @@
 """
-Why is it that after going through all the three laps of the first level it says game over.
-Why is it that the high scores are not displayed or the new high score recorded added to the file.
+Try to write high scores to a csv file and also try to read and display them when the game is over.
 """
 import math
 import csv
@@ -384,7 +383,7 @@ class GameSetting:
     PLAYER_ANIM_HOLD        = 8
     CHECKPOINT              = 240
     LAP_DIFFICULTY_FACTOR   = 2
-    LAPS_PER_LEVEL           = 3
+    LAPS_PER_LEVEL           = 1
     MINIMUM_DIFFICULTY      = 3
     MINIMUM_ENGINE_DIST     = 4000
     CRASH_DIVISOR           = 2
@@ -1748,7 +1747,7 @@ class Player:
         return self.level_over_lag == 0
 
     def alive(self):
-        return self.status != PlayerStatus.game_over
+        return self.status == PlayerStatus.game_over
 
     def __set_special_text(self, text, time):
         st = self.special_text
@@ -1831,8 +1830,8 @@ class Player:
         self.screech_sfx = None
 
     def __game_over_overlay(self, window):
-        go_font = pygame.font.Font(GameSetting.FONTS["retro_computer"], 44)
-        txt_go  = go_font.render("Game Over", 1, GameSetting.COLOURS["red"])
+        go_font = pygame.font.Font(GameSetting.FONTS["retro_computer"], 35)
+        txt_go  = go_font.render("Level Completed!", 1, GameSetting.COLOURS["red"])
         x       = (GameSetting.DIMENSIONS[0] - txt_go.get_size()[0]) / 2
         y       = (GameSetting.DIMENSIONS[1] - txt_go.get_size()[1]) / 2
         overlay = pygame.Surface(GameSetting.DIMENSIONS, pygame.SRCALPHA)
@@ -2367,6 +2366,8 @@ class Game:
             self.__player_select()
         self.player = Player(self.high_scores.minimum_score(), self.selected_player)
         for i, lvl in enumerate(GameSetting.LEVELS):
+            print(i)
+            print(lvl)
             self.level = Level(lvl)
 
             self.player.reset(self.level.laps)
@@ -2551,7 +2552,7 @@ class Game:
         self.selected_player = player_select.selected
 
     def __credits_screen(self):
-        credits = Credits()
+        credits = Credit()
         self.__progress(credits, GameSetting.CREDITS_FPS)
 
 class GameLauncher:
