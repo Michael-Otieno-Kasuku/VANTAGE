@@ -349,12 +349,12 @@ class GoldCoast:
         segments += LevelGenerator.add_corner(20,20,20,5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_corner(20,20,20,-5, LevelGenerator.last_y(segments))
         segments += LevelGenerator.add_straight(100, LevelGenerator.last_y(segments))
-        
+
         LevelGenerator.write(f"{name}.csv", segments)
 
 class GameSetting:
-    FPS                     = 90
-    TITLE_FPS               = 20
+    FPS                     = 360
+    TITLE_FPS               = 60
     COUNTDOWN_FPS           = 1
     PLAYER_SELECT_FPS       = 10
     CREDITS_FPS             = 10
@@ -365,12 +365,12 @@ class GameSetting:
     FULL_SCREEN             = True
     FRAME_RATE              =  (1.0/FPS)
     DIMENSIONS              = (640,480)
-    MUSIC_VOLUME            = 0.7
+    MUSIC_VOLUME            = 0.8
     SEGMENT_HEIGHT          = 260
     RUMBLE_LENGTH           = 3
     DRAW_DISTANCE           = 125
     ROAD_WIDTH              = 2100
-    LANES                   = 4
+    LANES                   = 6
     BOUNDS                  = 2.1
     TUNNEL_BOUNDS           = 0.85
     TUNNEL_HEIGHT           = 90
