@@ -2269,11 +2269,13 @@ class Level:
         self.competitors = []
 
     def build(self):
-        build_path = lambda p: os.path.join("assets", p, "{0}.csv".format(self.slug))
+        build_path = lambda p: os.path.join("vantage", "levels", p, "{0}.csv".format(self.slug))
+
         with open(build_path("tracks"), "r") as csvfile:
             for row in csv.reader(csvfile):
                 flts = map(lambda c: float(c), row)
                 self.add_segment(*flts)
+
         with open(build_path("sprites"), "r") as csvfile:
             for row in csv.reader(csvfile):
                 if row[1] == "speed_boost":
@@ -2281,9 +2283,11 @@ class Level:
                 else:
                     segment = self.segments[int(row[0])]
                     self.add_sprite(segment, row[1], float(row[2]), float(row[3]))
+
         with open(build_path("competitors"), "r") as csvfile:
             for row in csv.reader(csvfile):
                 self.add_competitor(int(row[0]), float(row[1]), row[2], float(row[3]))
+                
         with open(build_path("tunnels"), "r") as csvfile:
             for row in csv.reader(csvfile):
                 self.add_tunnel(int(row[0]), int(row[1]))
@@ -2364,10 +2368,13 @@ class Game:
         self.player = Player(self.high_scores.minimum_score(), self.selected_player)
         for i, lvl in enumerate(GameSetting.LEVELS):
             self.level = Level(lvl)
+
             self.player.reset(self.level.laps)
             self.level.build()
+
             if GameSetting.COUNTDOWN:
                 self.__countdown(i + 1)
+
             pygame.mixer.music.load(os.path.join("assets/audio", self.level.song))
             pygame.mixer.music.play(-1)
             pygame.mixer.music.set_volume(GameSetting.MUSIC_VOLUME)
