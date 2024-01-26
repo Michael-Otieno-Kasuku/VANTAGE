@@ -1,26 +1,26 @@
-Vintage SOFTWARE LICENSE AGREEMENT
+Vantage SOFTWARE LICENSE AGREEMENT
 
 Version 1.0, 1st January, 2024.
 
-Copyright (C) 2024 Vintage, Inc. https://www.vintage.com/
+Copyright (C) 2024 Vantage, Inc. https://www.vantage.com/
 
 Preamble
 
-The Vintage Software License Agreement is a free, copyleft license for software and other kinds of works developed by Vintage, Inc.
+The Vantage Software License Agreement is a free, copyleft license for software and other kinds of works developed by Vantage, Inc.
 
-Vintage believes in promoting the freedom to share and modify software, especially in educational environments. This license is designed to guarantee your freedom to share, modify, and use all versions of the Vintage software while ensuring it remains open and free for all users.
+Vantage believes in promoting the freedom to share and modify software, especially in educational environments. This license is designed to guarantee your freedom to share, modify, and use all versions of the Vantage software while ensuring it remains open and free for all users.
 
-When we speak of free software, we are referring to freedom, not price. This Software License Agreement is designed to ensure that you have the freedom to distribute copies of the Vintage software, modify it to suit your needs, and share those modifications with others.
+When we speak of free software, we are referring to freedom, not price. This Software License Agreement is designed to ensure that you have the freedom to distribute copies of the Vantage software, modify it to suit your needs, and share those modifications with others.
 
-To protect your rights, we need to prevent others from denying you these rights or asking you to surrender them. Therefore, you have certain responsibilities if you distribute copies of the Vintage software, or if you modify it: responsibilities to respect the freedom of others.
+To protect your rights, we need to prevent others from denying you these rights or asking you to surrender them. Therefore, you have certain responsibilities if you distribute copies of the Vantage software, or if you modify it: responsibilities to respect the freedom of others.
 
-Developers and users of Vintage software protect your rights with two steps: (1) assert copyright on the software, and (2) offer you this License giving you legal permission to copy, distribute, and/or modify it.
+Developers and users of Vantage software protect your rights with two steps: (1) assert copyright on the software, and (2) offer you this License giving you legal permission to copy, distribute, and/or modify it.
 
 For the developers' and users' protection, this license clarifies that there is no warranty for this free software. For both users' and developers' sake, this license requires that modified versions be marked as changed so that their problems will not be attributed erroneously to authors of previous versions.
 
 Some devices are designed to deny users access to install or run modified versions of the software inside them, although the manufacturer can do so. This is fundamentally incompatible with the aim of protecting users' freedom to change the software. The systematic pattern of such abuse occurs in the area of products for educational use, which is precisely where it is most unacceptable. Therefore, this license prohibits such practices for educational products. If such problems arise substantially in other domains, we stand ready to extend this provision to those domains in future versions of this license, as needed to protect the freedom of users.
 
-Finally, every program is threatened constantly by software patents. States should not allow patents to restrict the development and use of software on general-purpose computers. To prevent this, this license assures that patents cannot be used to render the Vintage software non-free.
+Finally, every program is threatened constantly by software patents. States should not allow patents to restrict the development and use of software on general-purpose computers. To prevent this, this license assures that patents cannot be used to render the Vantage software non-free.
 
 The precise terms and conditions for copying, distribution, and modification follow.
 
@@ -28,15 +28,15 @@ TERMS AND CONDITIONS
 
 0. Definitions
 
-"This License" refers to the Vintage Software License Agreement.
+"This License" refers to the Vantage Software License Agreement.
 
 "Copyright" also means copyright-like laws that apply to other kinds of works, such as semiconductor masks.
 
-"The Vintage Program" refers to any copyrightable work licensed under this License. Each licensee is addressed as "you". "Licensees" and "recipients" may be individuals or organizations.
+"The Vantage Program" refers to any copyrightable work licensed under this License. Each licensee is addressed as "you". "Licensees" and "recipients" may be individuals or organizations.
 
 To "modify" a work means to copy from or adapt all or part of the work in a fashion requiring copyright permission, other than the making of an exact copy. The resulting work is called a "modified version" of the earlier work or a work "based on" the earlier work.
 
-A "covered work" means either the unmodified Vintage Program or a work based on the Vintage Program.
+A "covered work" means either the unmodified Vantage Program or a work based on the Vantage Program.
 
 To "propagate" a work means to do anything with it that, without permission, would make you directly or secondarily liable for infringement under applicable copyright law, except executing it on a computer or modifying a private copy. Propagation includes copying, distribution (with or without modification), making available to the public, and in some countries other activities as well.
 
@@ -46,21 +46,21 @@ An interactive user interface displays "Appropriate Legal Notices" to the extent
 
 1. Source Code
 
-The "source code" for the Vintage Program means the preferred form of the work for making modifications to it. "Object code" means any non-source form of the Vintage Program.
+The "source code" for the Vantage Program means the preferred form of the work for making modifications to it. "Object code" means any non-source form of the Vantage Program.
 
 A "Standard Interface" means an interface that either is an official standard defined by a recognized standards body or, in the case of interfaces specified for a particular programming language, one that is widely used among developers working in that language.
 
-The "System Libraries" of the Vintage Program include anything, other than the work as a whole, that (a) is included in the normal form of packaging a Major Component, but which is not part of that Major Component, and (b) serves only to enable use of the work with that Major Component or to implement a Standard Interface for which an implementation is available to the public in source code form. A "Major Component", in this context, means a major essential component (kernel, window system, and so on) of the specific operating system (if any) on which the Vintage Program runs or a compiler used to produce the work or an object code interpreter used to run it.
+The "System Libraries" of the Vantage Program include anything, other than the work as a whole, that (a) is included in the normal form of packaging a Major Component, but which is not part of that Major Component, and (b) serves only to enable use of the work with that Major Component or to implement a Standard Interface for which an implementation is available to the public in source code form. A "Major Component", in this context, means a major essential component (kernel, window system, and so on) of the specific operating system (if any) on which the Vantage Program runs or a compiler used to produce the work or an object code interpreter used to run it.
 
-The "Corresponding Source" for the Vintage Program in object code form means all the source code needed to generate, install, and (for an executable work) run the object code and to modify the work, including scripts to control those activities. However, it does not include the work's System Libraries, or general-purpose tools or generally available free programs that are used unmodified in performing those activities but which are not part of the work. For example, Corresponding Source includes interface definition files associated with source files for the work and the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require, such as by intimate data communication or control flow between those subprograms and other parts of the work.
+The "Corresponding Source" for the Vantage Program in object code form means all the source code needed to generate, install, and (for an executable work) run the object code and to modify the work, including scripts to control those activities. However, it does not include the work's System Libraries, or general-purpose tools or generally available free programs that are used unmodified in performing those activities but which are not part of the work. For example, Corresponding Source includes interface definition files associated with source files for the work and the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require, such as by intimate data communication or control flow between those subprograms and other parts of the work.
 
 The Corresponding Source need not include anything that users can regenerate automatically from other parts of the Corresponding Source.
 
-The Corresponding Source for the Vintage Program in source code form is that same work.
+The Corresponding Source for the Vantage Program in source code form is that same work.
 
 2. Basic Permissions
 
-All rights granted under this Vintage Software License Agreement are granted for the term of copyright on the Vintage Program and are irrevocable provided the stated conditions are met. This License explicitly affirms your unlimited permission to run the unmodified Vintage Program. The output from running a covered work is covered by this License only if the output, given its content, constitutes a covered work. This License acknowledges your rights of fair use or other equivalent, as provided by copyright law.
+All rights granted under this Vantage Software License Agreement are granted for the term of copyright on the Vantage Program and are irrevocable provided the stated conditions are met. This License explicitly affirms your unlimited permission to run the unmodified Vantage Program. The output from running a covered work is covered by this License only if the output, given its content, constitutes a covered work. This License acknowledges your rights of fair use or other equivalent, as provided by copyright law.
 
 You may make, run, and propagate covered works that you do not convey without conditions, as long as your license otherwise remains in force. You may convey covered works to others for the sole purpose of having them make modifications exclusively for you or provide you with facilities for running those works, provided that you comply with the terms of this License in conveying all material for which you do not control copyright. Those thus making or running the covered works for you must do so exclusively on your behalf, under your direction and control, on terms that prohibit them from making any copies of your copyrighted material outside their relationship with you.
 
@@ -72,11 +72,11 @@ When you convey a covered work, you waive any legal power to forbid circumventio
 
 4. Conveying Verbatim Copies
 
-You may convey verbatim copies of the Vintage Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and distribute a copy of this License along with the Vintage Program.
+You may convey verbatim copies of the Vantage Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and distribute a copy of this License along with the Vantage Program.
 
 5. Conveying Modified Source Versions
 
-You may convey a work based on the Vintage Program, or the modifications to produce it from the Vintage Program, in the form of source code under the terms of Section 4, provided that you also meet all of these conditions:
+You may convey a work based on the Vantage Program, or the modifications to produce it from the Vantage Program, in the form of source code under the terms of Section 4, provided that you also meet all of these conditions:
 
     The work must carry prominent notices stating that you modified it, and giving a relevant date.
     The work must carry prominent notices stating that it is released under this License and any conditions added under Section 7. This requirement modifies the requirement in Section 4 to "keep intact all notices".
@@ -99,11 +99,11 @@ A separable portion of the object code, whose source code is excluded from the C
 
 7. Additional Terms
 
-"Additional permissions" are terms that supplement the terms of this License by making exceptions from one or more of its conditions. Additional permissions that are applicable to the entire Vintage Program shall be treated as though they were included in this License, to the extent that they are valid under applicable law. If additional permissions apply only to part of the Vintage Program, that part may be used separately under those permissions, but the entire Vintage Program remains governed by this License without regard to the additional permissions.
+"Additional permissions" are terms that supplement the terms of this License by making exceptions from one or more of its conditions. Additional permissions that are applicable to the entire Vantage Program shall be treated as though they were included in this License, to the extent that they are valid under applicable law. If additional permissions apply only to part of the Vantage Program, that part may be used separately under those permissions, but the entire Vantage Program remains governed by this License without regard to the additional permissions.
 
-When you convey a copy of the Vintage Program, you may, at your option, remove any additional permissions from that copy or from any part of it. (Additional permissions may be written to require their own removal in certain cases when you modify the Program.) You may place additional permissions on material added by you to the Vintage Program for which you have or can give appropriate copyright permission.
+When you convey a copy of the Vantage Program, you may, at your option, remove any additional permissions from that copy or from any part of it. (Additional permissions may be written to require their own removal in certain cases when you modify the Program.) You may place additional permissions on material added by you to the Vantage Program for which you have or can give appropriate copyright permission.
 
-Notwithstanding any other provision of this License, for material you add to the Vintage Program, you may (if authorized by the copyright holders of that material) supplement the terms of this License with terms:
+Notwithstanding any other provision of this License, for material you add to the Vantage Program, you may (if authorized by the copyright holders of that material) supplement the terms of this License with terms:
 
 a) Disclaiming warranty or limiting liability differently from the terms of sections 15 and 16 of this License; or
 
@@ -117,15 +117,15 @@ e) Declining to grant rights under trademark law for use of some trade names, tr
 
 f) Requiring indemnification of licensors and authors of that material by anyone who conveys the material (or modified versions of it) with contractual assumptions of liability to the recipient, for any liability that these contractual assumptions directly impose on those licensors and authors.
 
-All other non-permissive additional terms are considered "further restrictions" within the meaning of section 10. If the Vintage Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term. If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to the Vintage Program material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
+All other non-permissive additional terms are considered "further restrictions" within the meaning of section 10. If the Vantage Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term. If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to the Vantage Program material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
 
-If you add terms to the Vintage Program in accord with this section, you must place, in the relevant source files, a statement of the additional terms that apply to those files, or a notice indicating where to find the applicable terms.
+If you add terms to the Vantage Program in accord with this section, you must place, in the relevant source files, a statement of the additional terms that apply to those files, or a notice indicating where to find the applicable terms.
 
 Additional terms, permissive or non-permissive, may be stated in the form of a separately written license or stated as exceptions; the above requirements apply either way.
 
 8. Termination
 
-You may not propagate or modify the Vintage Program except as expressly provided under this License. Any attempt otherwise to propagate or modify it is void and will automatically terminate your rights under this License (including any patent licenses granted under the third paragraph of section 11).
+You may not propagate or modify the Vantage Program except as expressly provided under this License. Any attempt otherwise to propagate or modify it is void and will automatically terminate your rights under this License (including any patent licenses granted under the third paragraph of section 11).
 
 However, if you cease all violation of this License, then your license from a particular copyright holder is reinstated (a) provisionally, unless and until the copyright holder explicitly and finally terminates your license, and (b) permanently if the copyright holder fails to notify you of the violation by some reasonable means prior to 60 days after the cessation.
 
@@ -139,7 +139,7 @@ You must take reasonable steps to ensure that anyone who receives a copy of any 
 
 10. Patents
 
-A "contributor" is a copyright holder who authorizes use under this License of the Vintage Program or a work on which the Vintage Program is based. The work thus licensed is called the contributor's "contributor version."
+A "contributor" is a copyright holder who authorizes use under this License of the Vantage Program or a work on which the Vantage Program is based. The work thus licensed is called the contributor's "contributor version."
 
 A contributor's "essential patent claims" are all patent claims owned or controlled by the contributor, whether already acquired or hereafter acquired, that would be infringed by some manner, permitted by this License, of making, using, or selling its contributor version but do not include claims that would be infringed only as a consequence of further modification of the contributor version. For purposes of this definition, "control" includes the right to grant patent sublicenses in a manner consistent with the requirements of this License.
 
@@ -178,7 +178,7 @@ If you develop a new program and you want it to be of the greatest possible use 
 To do so, attach the following notices to the program. It is safest to attach them to the start of each source file to most effectively state the exclusion of warranty, and each file should have at least the "copyright" line and a pointer to where the full notice is found.
 
 
-Vintage is a robust and user-friendly web-based application designed to streamline school operations.
+Vantage is a robust and user-friendly web-based application designed to streamline school operations.
 Copyright (C) 2024 Michael Otieno Kasuku
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -187,7 +187,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-Vintage Copyright (C) 2023 Michael Otieno Kasuku
+Vantage Copyright (C) 2023 Michael Otieno Kasuku
 This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
 This is free software, and you are welcome to redistribute it under certain conditions; type 'show c' for details.
 
