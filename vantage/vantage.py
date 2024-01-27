@@ -2206,8 +2206,6 @@ class Game:
             self.__player_select()
         self.player = Player(self.high_scores.minimum_score(), self.selected_player)
         for i, lvl in enumerate(GameSetting.LEVELS):
-            print(i)
-            print(lvl)
             self.level = Level(lvl)
 
             self.player.reset(self.level.laps)
