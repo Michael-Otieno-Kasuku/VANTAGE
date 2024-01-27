@@ -2356,7 +2356,7 @@ class Game:
         p.set_direction(keys)
 
     def __pause_cycle(self):
-        pause_font = pygame.font.Font(s.FONTS["retro_computer"], 64)
+        pause_font = pygame.font.Font(GameSetting.FONTS["retro_computer"], 64)
         pause_text = pause_font.render("Paused", 1, GameSetting.COLOURS["text"])
         x          = (GameSetting.DIMENSIONS[0] - pause_text.get_width()) / 2
         y          = (GameSetting.DIMENSIONS[1] - pause_text.get_height()) / 2
