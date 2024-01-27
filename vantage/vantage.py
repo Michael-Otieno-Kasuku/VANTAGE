@@ -224,7 +224,7 @@ class GameSetting:
     PLAYER_ANIM_HOLD        = 8
     CHECKPOINT              = 240
     LAP_DIFFICULTY_FACTOR   = 2
-    LAPS_PER_LEVEL           = 1
+    LAPS_PER_LEVEL           = 3
     MINIMUM_DIFFICULTY      = 3
     MINIMUM_ENGINE_DIST     = 4000
     CRASH_DIVISOR           = 2
